@@ -1,5 +1,5 @@
 {
-  "name": "cakemanager/Settings",
+  "name": "cakemanager/cakephp-settings",
   "description": "Settings plugin for CakePHP",
   "type": "cakephp-plugin",
   "keywords": ["cakephp", "orm", "settings", "configure"],
@@ -12,9 +12,6 @@
   "require-dev": {
     "cakephp/orm": "~3.0",
     "phpunit/phpunit": " 4.6.*@dev"
-  },
-  "extra": {
-    "installer-name": "Settings"
   },
   "autoload": {
     "psr-4": {
