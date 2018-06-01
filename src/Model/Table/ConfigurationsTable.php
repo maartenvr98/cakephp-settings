@@ -38,4 +38,14 @@ class ConfigurationsTable extends Table
         $this->setPrimaryKey('id');
         $this->addBehavior('Timestamp');
     }
+
+    /**
+     * @param string $name
+     *
+     * @return \Cake\ORM\Query
+     */
+    public function findByName(string $name)
+    {
+        return $this->find()->where(['Configurations.name' => $name]);
+    }
 }

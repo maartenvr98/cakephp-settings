@@ -109,7 +109,7 @@ class Setting
     protected static function _tableExists()
     {
         $db = ConnectionManager::get('default');
-        $tables = $db->schemaCollection()->listTables();
+        $tables = $db->getSchemaCollection()->listTables();
 
         if (in_array('settings_configurations', $tables)) {
             return true;
@@ -141,6 +141,7 @@ class Setting
         $query = $model->find('all')->where(['autoload' => 1])->select(['name', 'value']);
 
         foreach ($query as $configure) {
+            /** @var \Settings\Model\Entity\Configuration $configure */
             self::_store($configure->get('name'), $configure->get('value'));
         }
     }
@@ -151,9 +152,9 @@ class Setting
      * Returns an instance of the Configurations-model (Table).
      * Also used as setter for the instance of the model.
      *
-     * @param \Cake\ORM\Table|null $model Model to use.
+     * @param \Settings\Model\Table\ConfigurationsTable|null $model Model to use.
      *
-     * @return \Cake\ORM\Table
+     * @return \Settings\Model\Table\ConfigurationsTable
      */
     public static function model($model = null)
     {
@@ -226,12 +227,12 @@ class Setting
      * @param string $key   Key for options.
      * @param array  $value Options to use.
      *
-     * @return mixed
+     * @return bool|mixed
      */
     public static function options($key, $value = null)
     {
         if (!self::_tableExists()) {
-            return;
+            return false;
         }
 
         if ($value) {
@@ -273,7 +274,7 @@ class Setting
     public static function write($key, $value = null, $options = [])
     {
         if (!self::_tableExists()) {
-            return;
+            return false;
         }
 
         self::autoLoad();
@@ -336,7 +337,7 @@ class Setting
 
         $query = $model->findByName($key);
 
-        if (!$query->Count()) {
+        if (!$query->count()) {
             return false;
         }
 
