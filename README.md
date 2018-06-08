@@ -1,9 +1,5 @@
 # Settings plugin for CakePHP
 
-[![Build Status](https://travis-ci.org/cakemanager/cakephp-settings.svg?branch=master)](https://travis-ci.org/cakemanager/cakephp-settings)
-[![Coverage Status](https://coveralls.io/repos/cakemanager/cakephp-settings/badge.svg?branch=master&service=github)](https://coveralls.io/github/cakemanager/cakephp-settings?branch=master)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cakemanager/cakephp-settings?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 The Settings Plugin allows you to manage your settings (normally used with cake's `Configure`-class) in your database.
 
 - Is easy to use: you can use the `Configure::read()` and `Configure::write()` methods via the [`Setting`-class](#using-the-class).
@@ -20,7 +16,7 @@ You can install this plugin into your CakePHP application using [composer](http:
 
 ```javascript
 "require": {
-	"cakemanager/cakephp-settings": "dev-master"
+	"jeffersonsimaogoncalves/cakephp-settings": "dev-master"
 }
 ```
 
@@ -117,4 +113,9 @@ To add your prefix to the settings-list use the following:
 ```php
 Configure::write('Settings.Prefixes.Test', 'Test');
 ```
+
+## Credits
+
+This work is based on the [code by CakeManager](https://github.com/cakemanager/cakephp-settings).
+
 
