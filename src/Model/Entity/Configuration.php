@@ -12,6 +12,7 @@
  * @since         1.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace Settings\Model\Entity;
 
 use Cake\ORM\Entity;
@@ -37,16 +38,18 @@ class Configuration extends Entity
         'weight' => true,
         'autoload' => true,
     ];
+    protected $_virtual = ['options'];
 
     /**
      * _setKey
      *
      * Setter for the key.
      *
-     * @param string $key The value.
+     * @param  string  $key  The value.
+     *
      * @return void
      */
-    protected function _setKey($key)
+    protected function _setKey(string $key)
     {
         $this->set('name', $key);
     }
@@ -68,7 +71,7 @@ class Configuration extends Entity
      *
      * Getter for `options`. Array's are json-decoded.
      *
-     * @return array
+     * @return array|false
      */
     protected function _getOptions()
     {
@@ -81,6 +84,4 @@ class Configuration extends Entity
         }
         return false;
     }
-
-    protected $_virtual = ['options'];
 }

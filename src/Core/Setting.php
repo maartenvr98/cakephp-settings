@@ -52,8 +52,8 @@ class Setting
     /**
      * Method to read the data.
      *
-     * @param string $key  Key with the name of the setting.
-     * @param string $type The type to return in.
+     * @param  string  $key  Key with the name of the setting.
+     * @param  string  $type  The type to return in.
      *
      * @return array|bool|mixed|null
      */
@@ -152,7 +152,7 @@ class Setting
      * Returns an instance of the Configurations-model (Table).
      * Also used as setter for the instance of the model.
      *
-     * @param \Settings\Model\Table\ConfigurationsTable|null $model Model to use.
+     * @param  \Settings\Model\Table\ConfigurationsTable|null  $model  Model to use.
      *
      * @return \Settings\Model\Table\ConfigurationsTable
      */
@@ -174,8 +174,8 @@ class Setting
      *
      * Stores recent data in the $_data-variable.
      *
-     * @param string $key   The key.
-     * @param mixed  $value The value.
+     * @param  string  $key  The key.
+     * @param  mixed  $value  The value.
      *
      * @return void
      */
@@ -189,9 +189,9 @@ class Setting
      *
      * Registers a setting and its default values.
      *
-     * @param string $key   The key.
-     * @param mixed  $value The default value.
-     * @param array  $data  Custom data.
+     * @param  string  $key  The key.
+     * @param  mixed  $value  The default value.
+     * @param  array  $data  Custom data.
      *
      * @return void
      */
@@ -224,12 +224,12 @@ class Setting
     /**
      * options
      *
-     * @param string $key   Key for options.
-     * @param array  $value Options to use.
+     * @param  string  $key  Key for options.
+     * @param  array|null  $value  Options to use.
      *
      * @return bool|mixed
      */
-    public static function options($key, $value = null)
+    public static function options(string $key, array $value = null)
     {
         if (!self::_tableExists()) {
             return false;
@@ -265,13 +265,13 @@ class Setting
      *      'editable' => 0,
      * ]
      *
-     * @param string $key     Key of the value. Must contain an prefix.
-     * @param mixed  $value   The value of the key.
-     * @param array  $options Options array.
+     * @param  string  $key  Key of the value. Must contain an prefix.
+     * @param  mixed  $value  The value of the key.
+     * @param  array  $options  Options array.
      *
      * @return bool
      */
-    public static function write($key, $value = null, $options = [])
+    public static function write(string $key, $value = null, $options = [])
     {
         if (!self::_tableExists()) {
             return false;
@@ -318,7 +318,7 @@ class Setting
      * Checks if an specific key exists.
      * Returns boolean.
      *
-     * @param string $key Key.
+     * @param  string  $key  Key.
      *
      * @return bool
      */
@@ -350,7 +350,7 @@ class Setting
      * Clears all settings out of the class. Settings
      * won't be deleted from database.
      *
-     * @param bool $reload Bool if settings should be reloaded
+     * @param  bool  $reload  Bool if settings should be reloaded
      *
      * @return void
      */
