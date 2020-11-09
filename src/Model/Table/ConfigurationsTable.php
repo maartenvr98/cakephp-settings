@@ -27,11 +27,11 @@ class ConfigurationsTable extends Table
     /**
      * Initialize method
      *
-     * @param array $config The configuration for the Table.
+     * @param  array  $config  The configuration for the Table.
      *
      * @return void
      */
-    public function initialize(array $config)
+    public function initialize(array $config): void
     {
         $this->setTable('settings_configurations');
         $this->setDisplayField('id');
@@ -40,7 +40,7 @@ class ConfigurationsTable extends Table
     }
 
     /**
-     * @param string $name
+     * @param  string  $name
      *
      * @return \Cake\ORM\Query
      */
