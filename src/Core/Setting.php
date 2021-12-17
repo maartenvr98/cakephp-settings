@@ -16,8 +16,10 @@
 namespace Settings\Core;
 
 use Cake\Datasource\ConnectionManager;
+use Cake\ORM\Table;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Hash;
+use Settings\Model\Table\ConfigurationsTable;
 
 class Setting
 {
@@ -152,11 +154,11 @@ class Setting
      * Returns an instance of the Configurations-model (Table).
      * Also used as setter for the instance of the model.
      *
-     * @param  \Settings\Model\Table\ConfigurationsTable|null  $model  Model to use.
+     * @param null $model Model to use.
      *
-     * @return \Settings\Model\Table\ConfigurationsTable
+     * @return \Cake\ORM\Table|\Settings\Model\Table\ConfigurationsTable|null
      */
-    public static function model($model = null)
+    public static function model($model = null): Table|ConfigurationsTable|null
     {
         if ($model) {
             self::$_model = $model;
@@ -224,12 +226,12 @@ class Setting
     /**
      * options
      *
-     * @param  string  $key  Key for options.
-     * @param  array|null  $value  Options to use.
+     * @param string     $key   Key for options.
+     * @param array|null $value Options to use.
      *
-     * @return bool|mixed
+     * @return mixed
      */
-    public static function options(string $key, array $value = null)
+    public static function options(string $key, array $value = null): mixed
     {
         if (!self::_tableExists()) {
             return false;

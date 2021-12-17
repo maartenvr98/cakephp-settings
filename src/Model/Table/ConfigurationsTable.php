@@ -15,6 +15,7 @@
 
 namespace Settings\Model\Table;
 
+use Cake\ORM\Query;
 use Cake\ORM\Table;
 
 /**
@@ -44,7 +45,7 @@ class ConfigurationsTable extends Table
      *
      * @return \Cake\ORM\Query
      */
-    public function findByName(string $name)
+    public function findByName(string $name): Query
     {
         return $this->find()->where(['Configurations.name' => $name]);
     }

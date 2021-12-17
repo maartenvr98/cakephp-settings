@@ -16,11 +16,16 @@ You can install this plugin into your CakePHP application using [composer](http:
 
 ```javascript
 "require": {
-	"jeffersonsimaogoncalves/cakephp-settings": "dev-master"
+	"maartenvr98/cakephp-settings": "dev-master"
 }
 ```
 
 And run `/composer update`.
+
+## Requirements
+* CakePHP 4.x
+* PHP 8.x
+
 
 ## Configuration
 

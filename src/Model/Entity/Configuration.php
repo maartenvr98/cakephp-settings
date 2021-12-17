@@ -61,7 +61,7 @@ class Configuration extends Entity
      *
      * @return string
      */
-    protected function _getKey()
+    protected function _getKey(): string
     {
         return $this->get('name');
     }
@@ -73,7 +73,7 @@ class Configuration extends Entity
      *
      * @return array|false
      */
-    protected function _getOptions()
+    protected function _getOptions(): bool|array
     {
         if (array_key_exists('name', $this->_properties)) {
             $options = Setting::options($this->_properties['name']);

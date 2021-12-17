@@ -1,5 +1,5 @@
 {
-  "name": "jeffersonsimaogoncalves/cakephp-settings",
+  "name": "maartenvr98/cakephp-settings",
   "description": "Settings plugin for CakePHP",
   "type": "cakephp-plugin",
   "keywords": [
@@ -17,10 +17,14 @@
     {
       "name": "Jefferson Simão Gonçalves",
       "homepage": "https://github.com/jeffersonsimaogoncalves"
+    },
+    {
+      "name": "maartenvr98",
+      "homepage": "https://github.com/maartenvr98"
     }
   ],
   "require": {
-    "php": "^7.2",
+    "php": "^8.0",
     "cakephp/orm": "^4.0"
   },
   "autoload": {
