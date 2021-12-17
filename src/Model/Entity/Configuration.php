@@ -75,7 +75,7 @@ class Configuration extends Entity
      */
     protected function _getOptions(): bool|array
     {
-        if (array_key_exists('name', $this->_properties)) {
+        if (array_key_exists('name', $this->_properties ?? [])) {
             $options = Setting::options($this->_properties['name']);
             if (is_callable($options)) {
                 return $options();
